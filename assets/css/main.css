@@ -1,0 +1,547 @@
+/* Color Definition */
+/* Color definition */
+/* Animations */
+@-webkit-keyframes fade-in {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes fade-out {
+  99% {
+    pointer-events: auto;
+  }
+  100% {
+    pointer-events: none;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  99% {
+    pointer-events: auto;
+  }
+  100% {
+    pointer-events: none;
+    opacity: 0;
+  }
+}
+
+* {
+  font-family: Roboto;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Shrikhand";
+  text-align: center;
+}
+
+button {
+  text-decoration: none;
+  border-radius: 32px;
+  font-weight: bold;
+  color: white;
+  background-color: #9356dc;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff69b4), to(#9932cc));
+  background: linear-gradient(#ff69b4, #9932cc);
+  padding: .75rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.spinning-loader {
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 110;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: fade-out .5s 3s ease-out forwards;
+          animation: fade-out .5s 3s ease-out forwards;
+}
+
+.spinning-loader::before {
+  content: "";
+  background-color: #9356dc;
+  width: 2rem;
+  height: 2rem;
+  -webkit-animation: spin 2s infinite linear;
+          animation: spin 2s infinite linear;
+}
+
+#choixResto {
+  background-color: #f2f3f4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+#choixResto div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #cacfd2;
+  font-weight: bold;
+  width: 100%;
+}
+
+#choixResto p {
+  padding: 1rem;
+}
+
+#choixResto div i {
+  margin-right: 0.5rem;
+}
+
+#choixResto .title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 2rem auto 0.5rem;
+}
+
+#fonctionnement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#fonctionnement h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 2rem 2rem 0.5rem 1rem;
+}
+
+#fonctionnement div {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f2f3f4;
+  -webkit-box-shadow: 10px 5px 5px #cacfd2;
+          box-shadow: 10px 5px 5px #cacfd2;
+  border-radius: 24px;
+  width: 80%;
+  height: 5rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  padding: 0 0.5rem;
+}
+
+#fonctionnement .etape {
+  width: 15rem;
+}
+
+#fonctionnement .num {
+  position: absolute;
+  top: 13%;
+  left: -5%;
+  color: white;
+  background-color: #9356dc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 24px;
+}
+
+#fonctionnement div:hover {
+  background-color: #f2eafb;
+}
+
+#fonctionnement div:hover i {
+  color: #9356dc;
+}
+
+#fonctionnement div i {
+  color: grey;
+  margin: 0 1rem 0 1.5rem;
+}
+
+#restaurants {
+  background-color: #f2f3f4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 1rem;
+}
+
+#restaurants a {
+  text-decoration: none;
+  color: black;
+}
+
+#restaurants .item {
+  width: 100%;
+  margin: 0 auto 1.5rem;
+  border-radius: 16px;
+  background-color: white;
+  line-height: 1;
+  position: relative;
+}
+
+#restaurants .item > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: .5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#restaurants .item > div p {
+  margin: .5rem;
+}
+
+#restaurants .item > div .far:hover {
+  color: #9356dc;
+}
+
+#restaurants .item > div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#restaurants .item > div div a {
+  margin: .5rem;
+}
+
+#restaurants .item img {
+  width: 100%;
+  margin: 0 auto;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  height: 12rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 10;
+}
+
+#restaurants .item .new {
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
+  width: 5rem;
+  height: 1rem;
+  background-color: #99E2D0;
+  color: green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 100;
+  border-radius: 6px;
+}
+
+#restaurants .item .nom {
+  font-weight: bold;
+}
+
+.hMenu {
+  position: relative;
+}
+
+.hMenu a {
+  color: #252727;
+}
+
+.hMenu i {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+}
+
+#title {
+  position: relative;
+}
+
+#title div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 12rem;
+  padding: 0 2rem;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  background-color: #f2f3f4;
+}
+
+#title img {
+  position: absolute;
+  top: -12rem;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+}
+
+#title h2 {
+  font-family: "Shrikhand";
+}
+
+#carte {
+  background-color: #f2f3f4;
+  padding: 1rem;
+}
+
+#carte h3 {
+  margin: 0;
+  font-weight: lighter;
+  color: #252727;
+}
+
+#carte h3::after {
+  display: block;
+  content: "";
+  width: 2rem;
+  height: 2px;
+  background-color: #99E2D0;
+  margin: .2rem 0 1rem;
+}
+
+#carte .plat {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  opacity: 0;
+  -webkit-animation: fade-in .6s ease-out forwards;
+          animation: fade-in .6s ease-out forwards;
+}
+
+#carte .plat:nth-of-type(1) {
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+}
+
+#carte .plat:nth-of-type(2) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+#carte .plat:nth-of-type(3) {
+  -webkit-animation-delay: 0.45s;
+          animation-delay: 0.45s;
+}
+
+#carte .plat:nth-of-type(4) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+#carte .plat:nth-of-type(5) {
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+
+#carte .plat:nth-of-type(6) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+#carte .plat:nth-of-type(7) {
+  -webkit-animation-delay: 1.05s;
+          animation-delay: 1.05s;
+}
+
+#carte .plat:nth-of-type(8) {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+#carte .plat:nth-of-type(9) {
+  -webkit-animation-delay: 1.35s;
+          animation-delay: 1.35s;
+}
+
+#carte .plat:nth-of-type(10) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+#carte .plat:nth-of-type(11) {
+  -webkit-animation-delay: 1.65s;
+          animation-delay: 1.65s;
+}
+
+#carte .plat:nth-of-type(12) {
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+
+#carte .plat:nth-of-type(13) {
+  -webkit-animation-delay: 1.95s;
+          animation-delay: 1.95s;
+}
+
+#carte .plat:nth-of-type(14) {
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+
+#carte .plat:nth-of-type(15) {
+  -webkit-animation-delay: 2.25s;
+          animation-delay: 2.25s;
+}
+
+#carte > div {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+#carte > div span {
+  font-weight: bold;
+}
+
+#carte > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#carte > div > div p {
+  margin: 0;
+  color: #252727;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#commande {
+  background-color: #f2f3f4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  padding: 1rem;
+  background-color: #252727;
+  color: white;
+}
+
+footer h3 {
+  margin-bottom: 1rem;
+  font-family: "Shrikhand";
+  font-weight: 100;
+}
+
+footer .fas {
+  width: 1rem;
+}
+
+.step-list__item--red {
+  color: red;
+}
+/*# sourceMappingURL=main.css.map */
