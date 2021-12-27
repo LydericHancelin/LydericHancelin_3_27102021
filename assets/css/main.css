@@ -67,18 +67,23 @@ button {
   text-decoration: none;
   border-radius: 32px;
   font-weight: bold;
-  color: white;
+  color: #fff;
   background-color: #9356dc;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff69b4), to(#9932cc));
-  background: linear-gradient(#ff69b4, #9932cc);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
+  background: linear-gradient(#ff79da, #9356dc);
   padding: .75rem 2rem;
   margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff7cdb;
 }
 
 .spinning-loader {
   width: 100%;
   height: 100vh;
-  background-color: red;
+  background-color: #c9abee;
   position: fixed;
   top: 0;
   left: 0;
@@ -192,6 +197,7 @@ button {
   margin: 0 auto;
   margin-bottom: 2rem;
   padding: 0 0.5rem;
+  cursor: pointer;
 }
 
 #fonctionnement .etape {
@@ -232,6 +238,35 @@ button {
 #fonctionnement div i {
   color: grey;
   margin: 0 1rem 0 1.5rem;
+}
+
+.icoheartP {
+  display: none;
+}
+
+.far:hover {
+  color: #9356dc;
+  cursor: pointer;
+}
+
+.fa-heart:hover {
+  color: #9356dc;
+}
+
+#changeHeartGout, #changeHeartNote, #changeHeartFr, #changeHeartSens {
+  display: none;
+}
+
+#changeHeartGout:checked + .icoheartV, #changeHeartNote:checked + .icoheartV, #changeHeartFr:checked + .icoheartV, #changeHeartSens:checked + .icoheartV {
+  display: none;
+}
+
+#changeHeartGout:checked + .icoheartV + .icoheartP, #changeHeartNote:checked + .icoheartV + .icoheartP, #changeHeartFr:checked + .icoheartV + .icoheartP, #changeHeartSens:checked + .icoheartV + .icoheartP {
+  display: block;
+}
+
+#changeHeartGout:checked + .icoheartP, #changeHeartNote:checked + .icoheartP, #changeHeartFr:checked + .icoheartP, #changeHeartSens:checked + .icoheartP {
+  display: block;
 }
 
 #restaurants {
@@ -277,7 +312,7 @@ button {
   margin: .5rem;
 }
 
-#restaurants .item > div .far:hover {
+#restaurants .item > div .fas {
   color: #9356dc;
 }
 
@@ -565,6 +600,10 @@ footer .fas {
   width: 1rem;
 }
 
+footer a {
+  color: #fff;
+}
+
 @media (min-width: 980px) {
   footer {
     -webkit-box-orient: horizontal;
@@ -588,6 +627,6 @@ footer .fas {
 }
 
 .step-list__item--red {
-  color: red;
+  color: #ff79da;
 }
 /*# sourceMappingURL=main.css.map */
