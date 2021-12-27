@@ -200,8 +200,11 @@ button {
 
 #fonctionnement .num {
   position: absolute;
-  top: 13%;
-  left: -5%;
+  top: 50%;
+  left: 0;
+  margin: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   color: white;
   background-color: #9356dc;
   display: -webkit-box;
@@ -323,6 +326,27 @@ button {
 
 #restaurants .item .nom {
   font-weight: bold;
+}
+
+@media (min-width: 980px) {
+  main {
+    width: 100%;
+    margin: 0 auto;
+  }
+  section {
+    width: auto;
+    margin: 0 10%;
+  }
+  #fonctionnement {
+    margin: 0 20%;
+  }
+  #choixResto {
+    width: 100%;
+    margin: 0;
+  }
+  #restaurants {
+    border-radius: 24px;
+  }
 }
 
 .hMenu {
@@ -539,6 +563,28 @@ footer h3 {
 
 footer .fas {
   width: 1rem;
+}
+
+@media (min-width: 980px) {
+  footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0;
+  }
+  footer > div, footer > a {
+    margin: 0 1.5rem;
+  }
+  footer > a {
+    text-decoration: underline;
+  }
 }
 
 .step-list__item--red {
