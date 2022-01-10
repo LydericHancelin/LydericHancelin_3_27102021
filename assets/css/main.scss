@@ -60,7 +60,9 @@ button {
     animation:fade-out .5s 3s ease-out forwards;
     &::before{
         content:"";
-        background-color: $c_violet;
+        border:4px solid $c_violet;
+        border-bottom: 4px solid transparent;
+        border-radius: 50%;
         width: 2rem;
         height: 2rem;
         animation: spin 2s infinite linear;
@@ -116,6 +118,7 @@ button {
     box-shadow: 10px 5px 5px #cacfd2;
     border-radius: 24px;
     width: 80%;
+    max-width: 30rem;
     height: 5rem;
     margin: 0 auto;
     margin-bottom: 2rem;
@@ -241,10 +244,7 @@ button {
     }
     section{
         width: auto;
-        margin: 0 10%;
-    }
-    #fonctionnement{
-        margin: 0 20%;
+        margin: 0 25%;
     }
     #choixResto{
         width: 100%;
@@ -306,36 +306,70 @@ button {
         }
     }
     .plat{
-        transform: translateY(-5px);
         opacity: 0;
         animation: fade-in .6s ease-out forwards;
+        transform: translateY(-5px);
+        color:$c_black;
+        background-color: $c_white;
+        border-radius: 24px;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: stretch;
+        overflow: hidden;
+        cursor: pointer;
+        span{
+            font-weight: bold;
+        }
+        .price{
+            align-self: flex-end;
+        }
         @for $i from 1 through 15{
             &:nth-of-type(#{$i}){
                 animation-delay: $i*0.15s;
             }
         }
-    }
-    >div{
-        background-color: $c_white;
-        border-radius: 16px;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        span{
-            font-weight: bold;
-        }
-        >div{
+        .plat-content{
+            position:relative;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            p{
-                margin: 0;
-                color: $c_grayDark;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
+            align-items: flex-start;
+            overflow: hidden;
+            padding: 1rem;
+            flex:1;
+            .description{
+                max-width: 90%;
+                p{
+                    margin: 0;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    width: 100%;
+                }
+            }
+            .price{
+                margin-left: auto;
+                display: block;
             }
         }
+        .animCheck{
+            width: 0;
+            background-color: $c_cyan;
+            color: $c_white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            transition: width .3s;
+            i{
+                transition: transform .6s;
+                transform: rotate(0);
+            }
+        }
+        &:hover .animCheck{
+            width: 4rem;
+            i{transform: rotate(360deg);}
+        }
     }
+
 }
 #commande{
     background-color: $c_grayLight;
@@ -361,7 +395,7 @@ footer {
     }
     padding: 1rem;
     background-color: $c_grayDark;
-    color: white;
+    color: $c_white;
 }
 @media (min-width: 980px) {
     footer{

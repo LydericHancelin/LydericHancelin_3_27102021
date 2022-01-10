@@ -103,7 +103,9 @@ button:hover {
 
 .spinning-loader::before {
   content: "";
-  background-color: #9356dc;
+  border: 4px solid #9356dc;
+  border-bottom: 4px solid transparent;
+  border-radius: 50%;
   width: 2rem;
   height: 2rem;
   -webkit-animation: spin 2s infinite linear;
@@ -193,6 +195,7 @@ button:hover {
           box-shadow: 10px 5px 5px #cacfd2;
   border-radius: 24px;
   width: 80%;
+  max-width: 30rem;
   height: 5rem;
   margin: 0 auto;
   margin-bottom: 2rem;
@@ -370,10 +373,7 @@ button:hover {
   }
   section {
     width: auto;
-    margin: 0 10%;
-  }
-  #fonctionnement {
-    margin: 0 20%;
+    margin: 0 25%;
   }
   #choixResto {
     width: 100%;
@@ -452,11 +452,32 @@ button:hover {
 }
 
 #carte .plat {
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
   opacity: 0;
   -webkit-animation: fade-in .6s ease-out forwards;
           animation: fade-in .6s ease-out forwards;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  color: black;
+  background-color: #fff;
+  border-radius: 24px;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#carte .plat span {
+  font-weight: bold;
+}
+
+#carte .plat .price {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 #carte .plat:nth-of-type(1) {
@@ -534,35 +555,72 @@ button:hover {
           animation-delay: 2.25s;
 }
 
-#carte > div {
-  background-color: #fff;
-  border-radius: 16px;
+#carte .plat .plat-content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  overflow: hidden;
   padding: 1rem;
-  margin-bottom: 1rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
-#carte > div span {
-  font-weight: bold;
+#carte .plat .plat-content .description {
+  max-width: 90%;
 }
 
-#carte > div > div {
+#carte .plat .plat-content .description p {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+#carte .plat .plat-content .price {
+  margin-left: auto;
+  display: block;
+}
+
+#carte .plat .animCheck {
+  width: 0;
+  background-color: #99E2D0;
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.7rem;
+  -webkit-transition: width .3s;
+  transition: width .3s;
 }
 
-#carte > div > div p {
-  margin: 0;
-  color: #252727;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+#carte .plat .animCheck i {
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+#carte .plat:hover .animCheck {
+  width: 4rem;
+}
+
+#carte .plat:hover .animCheck i {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 
 #commande {
@@ -587,7 +645,7 @@ footer {
   line-height: 1.5;
   padding: 1rem;
   background-color: #252727;
-  color: white;
+  color: #fff;
 }
 
 footer h3 {
