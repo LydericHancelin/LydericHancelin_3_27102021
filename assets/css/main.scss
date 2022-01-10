@@ -201,6 +201,7 @@ button {
             }
             .fas{
                 color: $c_violet;
+                cursor: pointer;
             }
             div{
                 display: flex;
@@ -226,7 +227,6 @@ button {
             width: 5rem;
             height: 1rem;
             background-color: $c_cyan;
-            color: green;
             display: flex;
             justify-content: center;
             z-index: 100;
