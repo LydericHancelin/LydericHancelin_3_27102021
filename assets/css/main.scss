@@ -55,7 +55,22 @@ h1 {
         animation: spin 2s infinite linear;
     }
 }
-
+.bouton{
+    text-decoration: none;
+    border-radius: 32px;
+    box-shadow: 10px 5px 5px $c_gray;
+    font-weight: bold;
+    color: $c_white;
+    background-color: $c_violet;
+    background: linear-gradient($c_pink, $c_violet);
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    &:hover{
+        background: lighten($c_pink,0.5%);
+        box-shadow: 10px 5px 5px darken($c_gray, 20%);
+    }
+}
 #choixResto {
     background-color: $c_grayLight;
     display: flex;
@@ -64,22 +79,7 @@ h1 {
     align-items: center;
     text-align: center;
     width: 100%;
-    .bouton{
-        text-decoration: none;
-        border-radius: 32px;
-        box-shadow: 10px 5px 5px $c_gray;
-        font-weight: bold;
-        color: $c_white;
-        background-color: $c_violet;
-        background: linear-gradient($c_pink, $c_violet);
-        padding: 1rem 1.25rem;
-        margin-bottom: 2rem;
-        cursor: pointer;
-        &:hover{
-            background: lighten($c_pink,0.5%);
-            box-shadow: 10px 5px 5px darken($c_gray, 20%);
-        }
-    }
+
     .town {
         display: flex;
         justify-content: center;
@@ -269,7 +269,6 @@ h1 {
             .fa-heart{
                 cursor: pointer;
                 transition: opacity .5s;
-                background-clip: text;
                 color: transparent;
                 position: absolute;
                 right: 0;
@@ -279,7 +278,9 @@ h1 {
                 color:$c_black;
             }
             .fas {
-                background: text linear-gradient($c_violet, $c_pink);
+                background: linear-gradient($c_violet, $c_pink);
+                background-clip: text;
+                -webkit-background-clip: text;
             }
             div{
                 display: flex;
@@ -365,6 +366,22 @@ h1 {
     }
     h2{
         font-family: "Shrikhand";
+    }
+    .fa-heart{
+        cursor: pointer;
+        transition: opacity .5s;
+        color: transparent;
+        position: absolute;
+        right: 0;
+    }
+    .far {
+        background-color: white;
+        color:$c_black;
+    }
+    .fas {
+        background: linear-gradient($c_violet, $c_pink);
+        background-clip: text;
+        -webkit-background-clip: text;
     }
 }
 #carte{

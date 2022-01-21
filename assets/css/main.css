@@ -95,6 +95,27 @@ h1 {
           animation: spin 2s infinite linear;
 }
 
+.bouton {
+  text-decoration: none;
+  border-radius: 32px;
+  -webkit-box-shadow: 10px 5px 5px gray;
+          box-shadow: 10px 5px 5px gray;
+  font-weight: bold;
+  color: #fff;
+  background-color: #9356dc;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
+  background: linear-gradient(#ff79da, #9356dc);
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.bouton:hover {
+  background: #ff7cdb;
+  -webkit-box-shadow: 10px 5px 5px #4d4d4d;
+          box-shadow: 10px 5px 5px #4d4d4d;
+}
+
 #choixResto {
   background-color: #f2f3f4;
   display: -webkit-box;
@@ -112,27 +133,6 @@ h1 {
           align-items: center;
   text-align: center;
   width: 100%;
-}
-
-#choixResto .bouton {
-  text-decoration: none;
-  border-radius: 32px;
-  -webkit-box-shadow: 10px 5px 5px gray;
-          box-shadow: 10px 5px 5px gray;
-  font-weight: bold;
-  color: #fff;
-  background-color: #9356dc;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
-  background: linear-gradient(#ff79da, #9356dc);
-  padding: 1rem 1.25rem;
-  margin-bottom: 2rem;
-  cursor: pointer;
-}
-
-#choixResto .bouton:hover {
-  background: #ff7cdb;
-  -webkit-box-shadow: 10px 5px 5px #4d4d4d;
-          box-shadow: 10px 5px 5px #4d4d4d;
 }
 
 #choixResto .town {
@@ -415,7 +415,6 @@ h1 {
   cursor: pointer;
   -webkit-transition: opacity .5s;
   transition: opacity .5s;
-  background-clip: text;
   color: transparent;
   position: absolute;
   right: 0;
@@ -427,8 +426,10 @@ h1 {
 }
 
 #restaurants .item > div .fas {
-  background: text -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
-  background: text linear-gradient(#9356dc, #ff79da);
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background: linear-gradient(#9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 #restaurants .item > div div {
@@ -540,6 +541,27 @@ h1 {
 
 #title h2 {
   font-family: "Shrikhand";
+}
+
+#title .fa-heart {
+  cursor: pointer;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+  color: transparent;
+  position: absolute;
+  right: 0;
+}
+
+#title .far {
+  background-color: white;
+  color: black;
+}
+
+#title .fas {
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background: linear-gradient(#9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 #carte {
